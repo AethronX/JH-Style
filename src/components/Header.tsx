@@ -184,22 +184,26 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Drawer Navigation */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-start">
-          <div className="w-4/5 max-w-sm bg-white h-full p-6 flex flex-col justify-between shadow-2xl animate-in slide-in-from-right duration-300">
-            <div>
-              <div className="flex items-center justify-between pb-6 border-b border-zinc-100">
-                <div>
-                  <span className="font-extrabold text-xl tracking-[0.2em] text-black">JH STYLE</span>
-                  <p className="text-[10px] text-zinc-500 tracking-widest mt-0.5">NIZWA, OMAN</p>
-                </div>
+          <div className="w-4/5 max-w-xs sm:max-w-sm bg-white h-full p-5 sm:p-6 flex flex-col justify-between shadow-2xl animate-in slide-in-from-right duration-300">
+            <div className="overflow-y-auto">
+              {/* Drawer Header with Official Logo */}
+              <div className="flex items-center justify-between pb-5 border-b border-zinc-200">
+                <JHLogo size="sm" variant="dark" />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-zinc-500 hover:text-black"
+                  className="p-2 text-zinc-500 hover:text-black rounded-full hover:bg-zinc-100 transition-colors"
+                  aria-label="إغلاق القائمة"
                 >
-                  <X size={22} />
+                  <X size={20} />
                 </button>
               </div>
 
-              <div className="py-6 space-y-4">
+              {/* Menu Items */}
+              <div className="py-5 space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block px-2 mb-2">
+                  القائمة الرئيسية
+                </span>
+
                 {navLinks.map((link) => (
                   <button
                     key={link.id}
@@ -207,38 +211,67 @@ export const Header: React.FC<HeaderProps> = ({
                       link.action();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="w-full text-right text-base font-medium text-zinc-900 py-2.5 px-2 hover:bg-zinc-50 transition-colors flex items-center justify-between border-b border-zinc-50"
+                    className="w-full text-right text-sm font-semibold text-zinc-900 py-3 px-3 rounded-lg hover:bg-zinc-100 transition-colors flex items-center justify-between"
                   >
                     <span>{link.labelAr}</span>
-                    <ArrowLeft size={16} className="text-zinc-400 rotate-180" />
+                    <ArrowLeft size={16} className="text-zinc-400" />
                   </button>
                 ))}
 
                 <button
                   onClick={() => {
-                    setActiveTab('about');
+                    onOpenAccount();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full text-right text-base font-medium text-zinc-700 py-2.5 px-2 hover:bg-zinc-50"
+                  className="w-full text-right text-sm font-semibold text-zinc-900 py-3 px-3 rounded-lg hover:bg-zinc-100 transition-colors flex items-center justify-between"
                 >
-                  عن البراند (JH STYLE)
+                  <div className="flex items-center gap-2">
+                    <User size={18} className="text-zinc-600" />
+                    <span>حسابي وتتبع الطلبات</span>
+                  </div>
+                  <ArrowLeft size={16} className="text-zinc-400" />
                 </button>
 
-                <button
-                  onClick={() => {
-                    setActiveTab('contact');
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="w-full text-right text-base font-medium text-zinc-700 py-2.5 px-2 hover:bg-zinc-50"
-                >
-                  التواصل والموقع في نزوى
-                </button>
+                <div className="pt-4 border-t border-zinc-100 space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 block px-2 mb-2">
+                    معلومات البراند
+                  </span>
+                  <button
+                    onClick={() => {
+                      setActiveTab('about');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-right text-xs font-medium text-zinc-700 py-2.5 px-3 rounded-lg hover:bg-zinc-100 block"
+                  >
+                    قصة البراند (JH STYLE)
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setActiveTab('contact');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-right text-xs font-medium text-zinc-700 py-2.5 px-3 rounded-lg hover:bg-zinc-100 block"
+                  >
+                    الفروع والموقع في نزوى
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-zinc-100 text-center">
-              <p className="text-xs text-zinc-500">أناقة رجالية عصرية عُمانية</p>
-              <p className="text-[11px] text-zinc-400 mt-1">نزوى، سلطنة عُمان</p>
+            {/* Drawer Footer with direct WhatsApp help */}
+            <div className="pt-4 border-t border-zinc-200">
+              <a
+                href="https://wa.me/96890000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg text-xs flex items-center justify-center gap-2 shadow-md hover:bg-emerald-700 transition-colors"
+              >
+                <span>دعم واستشارات الواتساب المباشرة</span>
+              </a>
+              <p className="text-[10px] text-zinc-400 text-center mt-3 font-mono">
+                نزوى • سلطنة عُمان
+              </p>
             </div>
           </div>
         </div>

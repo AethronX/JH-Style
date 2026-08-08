@@ -55,26 +55,34 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
-        className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 lg:p-6"
+        className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4 lg:p-6"
       >
-        {/* Container */}
+        {/* Backdrop overlay click to close */}
+        <div className="absolute inset-0" onClick={onClose} />
+
+        {/* Modal Container / Mobile Bottom Sheet */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-white w-full max-w-5xl overflow-hidden shadow-2xl border border-zinc-200 my-auto text-right font-sans"
+          className="relative bg-white w-full max-w-5xl overflow-hidden shadow-2xl border border-zinc-200 rounded-t-2xl sm:rounded-none max-h-[92vh] sm:max-h-[88vh] flex flex-col text-right font-sans z-10"
         >
+          {/* Mobile Bottom Sheet Handle Bar */}
+          <div className="sm:hidden w-full flex justify-center py-2.5 bg-zinc-100 border-b border-zinc-200 shrink-0 cursor-grab">
+            <div className="w-12 h-1.5 bg-zinc-300 rounded-full" />
+          </div>
+
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 left-4 z-20 p-2.5 bg-black text-white hover:bg-zinc-800 transition-colors rounded-full"
+            className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 p-2 sm:p-2.5 bg-black text-white hover:bg-zinc-800 transition-colors rounded-full shadow-md"
             aria-label="إغلاق"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          <div className="overflow-y-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-0">
           
           {/* Left Column: Image Gallery (RTL layout) */}
           <div className="lg:col-span-7 p-4 sm:p-6 bg-zinc-50 border-b lg:border-b-0 lg:border-l border-zinc-200 flex flex-col gap-4">

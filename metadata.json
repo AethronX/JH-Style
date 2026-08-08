@@ -1,0 +1,6 @@
+{
+  "name": "JH STYLE",
+  "description": "JH STYLE — Premium Men's Fashion E-Commerce in Nizwa, Sultanate of Oman. Minimal, luxury, black & white fashion store.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

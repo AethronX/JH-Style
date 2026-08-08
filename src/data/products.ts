@@ -1,0 +1,157 @@
+import { Category, Product } from '../types';
+import linenPantsImg from '../assets/images/linen_pants_1786180447172.jpg';
+import burgundyPoloImg from '../assets/images/burgundy_polo_1786180460135.jpg';
+import linenShortsImg from '../assets/images/linen_shorts_1786180473045.jpg';
+import navyShirtImg from '../assets/images/navy_shirt_1786180482702.jpg';
+
+export const CATEGORIES: Category[] = [
+  {
+    id: 'pants',
+    nameAr: 'بناطيل الكتان',
+    nameEn: 'Linen Trousers',
+    image: linenPantsImg,
+    itemCount: 1,
+  },
+  {
+    id: 'tshirts',
+    nameAr: 'بولو ومحبوكات',
+    nameEn: 'Knit Polo Shirts',
+    image: burgundyPoloImg,
+    itemCount: 1,
+  },
+  {
+    id: 'shorts',
+    nameAr: 'شورتات كاجوال',
+    nameEn: 'Casual Shorts',
+    image: linenShortsImg,
+    itemCount: 1,
+  },
+  {
+    id: 'shirts',
+    nameAr: 'قمصان ريسورت',
+    nameEn: 'Resort Shirts',
+    image: navyShirtImg,
+    itemCount: 1,
+  },
+];
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'jh-001',
+    titleAr: 'بنطال كتان أوف وايت مريح',
+    titleEn: 'Off-White Relaxed Linen Trousers',
+    subtitleAr: 'كتان طبيعي 100% بقصة واسعة أنيقة وخصر مطاطي مع رباط',
+    price: 18.500,
+    originalPrice: 22.000,
+    category: 'pants',
+    images: [
+      linenPantsImg,
+    ],
+    colors: [
+      { nameAr: 'أوف وايت / عاجي', nameEn: 'Off-White / Cream', hex: '#f0ede6' },
+      { nameAr: 'بيج رملي', nameEn: 'Sand Beige', hex: '#e3dac9' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    badge: 'الأكثر مبيعاً',
+    descriptionAr: 'بنطال كتان أوف وايت مميز بخصر مطاطي برباط وقصة واسعة انسيابية، مصنوع من أفضل خيوط الكتان الطبيعي خفيف الوزن ليوفر لك التهوية والراحة المطلقة مع الحفاظ على الأناقة والوقار الأصيل.',
+    fabricAr: '100% كتان طبيعي عالي التهوية ناعم على البشرة.',
+    careAr: 'غسيل بماء بارد، كَي بالبخار بدرجة حرارة خفيفة.',
+    rating: 4.9,
+    reviewCount: 38,
+    inStock: true,
+    isBestSeller: true,
+  },
+  {
+    id: 'jh-002',
+    titleAr: 'قميص بولو محبوك عنابي بياقة عاجية',
+    titleEn: 'Burgundy Ribbed Knit Polo with Cream Collar',
+    subtitleAr: 'حياكة مضلعة فاخرة بدون أزرار مع ياقة متباينة',
+    price: 16.000,
+    originalPrice: 19.500,
+    category: 'tshirts',
+    images: [
+      burgundyPoloImg,
+    ],
+    colors: [
+      { nameAr: 'عنابي / بورغندي', nameEn: 'Burgundy', hex: '#581825' },
+      { nameAr: 'كحلي فاخر', nameEn: 'Navy Blue', hex: '#1c2841' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    badge: 'جديد',
+    descriptionAr: 'بولو رجالي راقٍ محبوك بخيوط ناعمة مضلعة، يأتي باللون العنابي العميق مع ياقة مفتوحة باللون العاجي. تصميم ريترو معاصر يمنحك حضوراً واثقاً ومميزاً في اللقاءات والمناسبات.',
+    fabricAr: 'خليط القطن المحبوك والنسيج المرن فائق النعومة.',
+    careAr: 'غسيل يدوي بماء بارد أو غسيل جاف، التجفيف مسطحاً.',
+    rating: 5.0,
+    reviewCount: 44,
+    inStock: true,
+    isNew: true,
+  },
+  {
+    id: 'jh-003',
+    titleAr: 'شورت كتان أوف وايت كاجوال',
+    titleEn: 'Off-White Casual Linen Shorts',
+    subtitleAr: 'شورت مريح بخصر مطاطي برباط وقماش تنفسي',
+    price: 12.500,
+    originalPrice: 15.000,
+    category: 'shorts',
+    images: [
+      linenShortsImg,
+    ],
+    colors: [
+      { nameAr: 'أوف وايت / كريمي', nameEn: 'Off-White', hex: '#f2eedf' },
+      { nameAr: 'زيتي كلاسيك', nameEn: 'Olive Green', hex: '#4b5320' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    badge: 'عرض خاص',
+    descriptionAr: 'شورت كتان عصري بطول مريح فوق الركبة، يشتمل على جيوب جانبية وخصر مطاطي مرن مع برباط قابل للتعديل. مصمم لراحة لا تضاهى في النزهات والإطلالات الصيفية الهادئة.',
+    fabricAr: '100% كتان طبيعي ناعم معالج ضد الانكماش.',
+    careAr: 'غسيل بماء بارد مع ألوان مشابهة.',
+    rating: 4.8,
+    reviewCount: 27,
+    inStock: true,
+    isOffer: true,
+  },
+  {
+    id: 'jh-004',
+    titleAr: 'قميص كتان كحلي بأكمام قصيرة',
+    titleEn: 'Deep Navy Short-Sleeve Resort Shirt',
+    subtitleAr: 'ياقة ريسورت مفتوحة مع نسيج محبوك خفيف ومريح',
+    price: 15.000,
+    originalPrice: 18.000,
+    category: 'shirts',
+    images: [
+      navyShirtImg,
+    ],
+    colors: [
+      { nameAr: 'كحلي داكن', nameEn: 'Deep Navy', hex: '#1b2a47' },
+      { nameAr: 'أبيض ناصع', nameEn: 'Pure White', hex: '#ffffff' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    badge: 'حصري',
+    descriptionAr: 'قميص بأكمام قصيرة وياقة ريسورت مفتوحة مصنوع من نسيج الكتان والقطن ذو الملمس البارز الجذاب باللون الكحلي العميق. أكمام بثنية أنيقة مع قصة مستقيمة تمنحك إطلالة فريدة من نوعها.',
+    fabricAr: 'خليط كتان وقطن عالي الجودة ناعم ومقاوم للتجعد.',
+    careAr: 'غسيل خفيف أو غسيل يدوي بماء بارد.',
+    rating: 4.9,
+    reviewCount: 31,
+    inStock: true,
+    isNew: true,
+  },
+];
+
+export const OMAN_WILAYAT = [
+  'نزوى (الداخلية)',
+  'مسقط (العاصمة)',
+  'صلالة (ظفار)',
+  'صحار (شمال الباطنة)',
+  'صور (جنوب الشرقية)',
+  'البريمي',
+  'الرستاق (جنوب الباطنة)',
+  'إبرا (شمال الشرقية)',
+  'عبري (الظاهرة)',
+  'خصب (مسندم)',
+  'سماءيل',
+  'بهلاء',
+  'أدم',
+  'بركاء',
+  'السويق',
+];

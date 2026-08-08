@@ -66,26 +66,26 @@ export const Header: React.FC<HeaderProps> = ({
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 relative ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 py-3.5 shadow-sm'
-          : 'bg-white border-b border-zinc-100 py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 py-3 sm:py-4 shadow-sm'
+          : 'bg-white border-b border-zinc-100 py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           
-          {/* Logo - Typography based luxury logo */}
+          {/* Logo & Mobile Menu Toggle */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-1.5 text-zinc-900 hover:text-black transition-colors"
+              className="lg:hidden p-2 text-zinc-900 hover:text-black hover:bg-zinc-100 rounded-full transition-colors"
               aria-label="القائمة"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
             </button>
 
             <button
               onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="text-right focus:outline-none group py-1"
+              className="text-right focus:outline-none group py-1 shrink-0"
               aria-label="JH STYLE الرئيسية"
             >
               <JHLogo size={isScrolled ? 'sm' : 'md'} variant="dark" />
@@ -93,24 +93,24 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Center Navigation - Desktop with Mega Menu hover */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navLinks.map((link) => (
               <div
                 key={link.id}
                 onMouseEnter={() => link.hasMega && setIsMegaMenuOpen(true)}
-                className="relative py-1"
+                className="relative py-2"
               >
                 <button
                   onClick={link.action}
-                  className={`text-sm font-medium tracking-wide transition-all relative ${
+                  className={`text-base sm:text-lg tracking-wide transition-all relative py-1 px-1 ${
                     activeTab === link.id || (activeTab === 'shop' && link.id === 'shop')
-                      ? 'text-black font-semibold'
-                      : 'text-zinc-600 hover:text-black'
+                      ? 'text-black font-extrabold'
+                      : 'text-zinc-700 hover:text-black font-semibold'
                   }`}
                 >
                   {link.labelAr}
                   {(activeTab === link.id || (activeTab === 'shop' && link.id === 'shop')) && (
-                    <span className="absolute bottom-0 right-0 left-0 h-[1.5px] bg-black transition-all" />
+                    <span className="absolute bottom-0 right-0 left-0 h-[2.5px] bg-black rounded-full transition-all" />
                   )}
                 </button>
               </div>
@@ -118,34 +118,34 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={onOpenSearch}
-              className="p-2 text-zinc-800 hover:text-black transition-colors rounded-full hover:bg-zinc-100"
+              className="p-2.5 text-zinc-800 hover:text-black transition-colors rounded-full hover:bg-zinc-100 flex items-center justify-center"
               title="بحث"
               aria-label="بحث في المتجر"
             >
-              <Search size={20} strokeWidth={1.75} />
+              <Search size={22} strokeWidth={2} />
             </button>
 
             <button
               onClick={onOpenAccount}
-              className="p-2 text-zinc-800 hover:text-black transition-colors rounded-full hover:bg-zinc-100 hidden sm:flex"
+              className="p-2.5 text-zinc-800 hover:text-black transition-colors rounded-full hover:bg-zinc-100 hidden sm:flex items-center justify-center"
               title="حسابي والتتبع"
               aria-label="حسابي والتتبع"
             >
-              <User size={20} strokeWidth={1.75} />
+              <User size={22} strokeWidth={2} />
             </button>
 
             <button
               onClick={onOpenWishlist}
-              className="p-2 text-zinc-800 hover:text-black transition-colors relative rounded-full hover:bg-zinc-100 hidden sm:flex"
+              className="p-2.5 text-zinc-800 hover:text-black transition-colors relative rounded-full hover:bg-zinc-100 hidden sm:flex items-center justify-center"
               title="المفضلة"
               aria-label="المفضلة"
             >
-              <Heart size={20} strokeWidth={1.75} />
+              <Heart size={22} strokeWidth={2} />
               {wishlistCount > 0 && (
-                <span className="absolute top-1 right-1 w-4 h-4 bg-black text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                <span className="absolute top-1 right-1 min-w-[18px] h-4 px-1 bg-black text-white text-[10px] font-extrabold rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
               )}
@@ -153,19 +153,19 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={onOpenCart}
-              className="p-2 text-zinc-900 hover:text-black transition-colors relative rounded-full hover:bg-zinc-100 flex items-center gap-2 group"
+              className="p-2 sm:p-2.5 text-zinc-900 hover:text-black transition-colors relative rounded-full hover:bg-zinc-100 flex items-center gap-2 group"
               title="حقيبة التسوق"
               aria-label="سلة التسوق"
             >
-              <div className="relative">
-                <ShoppingBag size={21} strokeWidth={1.75} />
+              <div className="relative flex items-center justify-center">
+                <ShoppingBag size={24} strokeWidth={2} />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1.5 min-w-[18px] h-4 px-1 bg-black text-white text-[10px] font-extrabold rounded-full flex items-center justify-center animate-pulse">
                     {cartCount}
                   </span>
                 )}
               </div>
-              <span className="hidden md:inline text-xs font-semibold text-zinc-900 group-hover:text-black tracking-wider">
+              <span className="hidden md:inline text-sm font-bold text-zinc-900 group-hover:text-black tracking-wider pr-1">
                 السلة
               </span>
             </button>

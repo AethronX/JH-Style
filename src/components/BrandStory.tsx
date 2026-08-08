@@ -8,16 +8,16 @@ export const BrandStory: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400">
-            HERITAGE & CRAFTSMANSHIP
+          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.35em] text-zinc-400 font-bold block mb-2">
+            HERITAGE & CRAFTSMANSHIP • العراقة والحرفية
           </span>
-          <h2 className="text-3xl sm:text-5xl font-editorial font-normal text-white tracking-widest mt-2 uppercase">
+          <h2 className="text-4xl sm:text-6xl font-black text-white tracking-widest uppercase">
             JH STYLE — NIZWA OMAN
           </h2>
-          <p className="text-xl font-medium text-zinc-300 mt-3">
+          <p className="text-xl sm:text-2xl font-bold text-zinc-200 mt-3">
             من عراقة نزوى إلى أفق الموضة العالمية
           </p>
-          <div className="w-12 h-0.5 bg-zinc-700 mx-auto mt-6" />
+          <div className="w-16 h-1 bg-white mx-auto mt-6" />
         </div>
 
         {/* Story Grid */}

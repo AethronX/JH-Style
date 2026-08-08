@@ -51,17 +51,17 @@ export const ShopTheLook: React.FC<ShopTheLookProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-zinc-800 pb-6 text-right">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-zinc-800 pb-6 text-right gap-2">
           <div>
-            <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono tracking-[0.3em] uppercase mb-2">
-              <Sparkles size={14} className="text-white" />
-              <span>THE CURATED OUTFIT</span>
+            <div className="flex items-center gap-2 text-zinc-300 text-xs font-mono tracking-[0.3em] uppercase mb-1 font-bold">
+              <Sparkles size={18} className="text-white" />
+              <span>THE CURATED OUTFIT • الإطلالة المنسقة</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              تسوق الإطلالة الكاملة <span className="font-editorial text-2xl sm:text-3xl font-normal text-zinc-400 uppercase mr-2">• SHOP THE LOOK</span>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+              تسوق الإطلالة الكاملة <span className="font-editorial text-2xl sm:text-4xl font-normal text-zinc-400 uppercase mr-2">• SHOP THE LOOK</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-2 md:mt-0 max-w-md">
+          <p className="text-sm sm:text-base text-zinc-300 mt-2 md:mt-0 max-w-lg font-medium leading-relaxed">
             نسقنا لك هذه الإطلالة الكتان الكلاسيكية الراقية لطقس عُمان الدافئ، يمكنك طلب القطع منفردة أو إضافتها بالكامل بضغطة واحدة.
           </p>
         </div>

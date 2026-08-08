@@ -51,16 +51,16 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-zinc-200">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-zinc-200 gap-3">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-zinc-400 font-mono">
-              JH STYLE COLLECTION
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-500 font-mono font-bold block mb-1">
+              JH STYLE COLLECTION • تشكيلة الملابس
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-black tracking-tight mt-1">
+            <h2 className="text-3xl sm:text-5xl font-black text-black tracking-tight">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-sm text-zinc-500 mt-1 font-normal">{subtitle}</p>
+              <p className="text-sm sm:text-base text-zinc-600 mt-1 font-medium">{subtitle}</p>
             )}
           </div>
 
@@ -69,12 +69,12 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
             <div className="flex items-center gap-3 mt-4 md:mt-0">
               
               {/* Sort Selector */}
-              <div className="flex items-center gap-2 border border-zinc-200 px-3 py-2 bg-white text-xs font-medium text-zinc-800">
-                <ArrowUpDown size={14} className="text-zinc-500" />
+              <div className="flex items-center gap-2 border border-zinc-300 px-3.5 py-2.5 bg-white text-xs sm:text-sm font-semibold text-zinc-900 rounded-xs hover:border-black transition-colors">
+                <ArrowUpDown size={16} className="text-zinc-600" />
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-transparent focus:outline-none cursor-pointer text-xs font-medium text-black"
+                  className="bg-transparent focus:outline-none cursor-pointer text-xs sm:text-sm font-bold text-black"
                 >
                   <option value="newest">الترتيب: الأحدث</option>
                   <option value="bestseller">الترتيب: الأكثر مبيعاً</option>
@@ -86,7 +86,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
               {/* Mobile Filter Trigger Button */}
               <button
                 onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                className="md:hidden flex items-center gap-2 border border-zinc-200 px-3 py-2 text-xs font-bold text-black"
+                className="md:hidden flex items-center gap-2 border border-zinc-300 px-3.5 py-2.5 text-xs sm:text-sm font-extrabold text-black rounded-xs"
               >
                 <SlidersHorizontal size={14} />
                 <span>الفلاتر</span>

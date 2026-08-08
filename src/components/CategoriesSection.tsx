@@ -16,16 +16,16 @@ export const CategoriesSection: React.FC<CategoriesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 border-b border-zinc-200 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 border-b border-zinc-200 pb-6 gap-2">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-zinc-400 font-mono">
-              THE COLLECTIONS
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-500 font-mono font-bold block mb-1">
+              THE COLLECTIONS • التصنيفات
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mt-1">
+            <h2 className="text-3xl sm:text-5xl font-black text-black tracking-tight">
               اكتشف مجموعتك
             </h2>
           </div>
-          <p className="text-sm text-zinc-500 max-w-sm mt-2 sm:mt-0 font-normal">
+          <p className="text-sm sm:text-base text-zinc-600 max-w-md font-medium">
             تصنيفات متكاملة تناسب أسلوب حياتك اليومي والمناسبات الخاصة بأسلوب أنيق.
           </p>
         </div>

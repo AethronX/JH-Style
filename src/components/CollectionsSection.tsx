@@ -53,16 +53,16 @@ export const CollectionsSection: React.FC<CollectionsSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-zinc-200 text-right">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-zinc-200 text-right gap-2">
           <div>
-            <span className="text-xs font-mono text-zinc-400 tracking-[0.3em] uppercase block mb-2">
-              CURATED EDITORIALS
+            <span className="text-xs font-mono text-zinc-500 font-bold tracking-[0.3em] uppercase block mb-1">
+              CURATED EDITORIALS • مجموعات مختارة
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
-              المجموعات الحصرية <span className="font-editorial text-2xl sm:text-3xl font-normal text-zinc-600 uppercase mr-2">• COLLECTIONS</span>
+            <h2 className="text-3xl sm:text-5xl font-black text-black tracking-tight">
+              المجموعات الحصرية <span className="font-editorial text-2xl sm:text-4xl font-normal text-zinc-600 uppercase mr-2">• COLLECTIONS</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-zinc-500 mt-2 md:mt-0 max-w-sm">
+          <p className="text-sm sm:text-base text-zinc-600 mt-2 md:mt-0 max-w-md font-medium">
             مجموعات أزياء مصممة بحس تحريري عالٍ لتعكس شخصيتك في كل مناسبة.
           </p>
         </div>

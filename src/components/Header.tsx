@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, ArrowLeft, User } from 'lucide-react';
 import { ActiveTab, CategoryId } from '../types';
 import { MegaMenu } from './MegaMenu';
+import { JHLogo } from './JHLogo';
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -84,14 +85,10 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => { setActiveTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="text-right focus:outline-none group"
+              className="text-right focus:outline-none group py-1"
+              aria-label="JH STYLE الرئيسية"
             >
-              <span className="block font-extrabold text-2xl tracking-[0.2em] text-black font-serif uppercase">
-                JH STYLE
-              </span>
-              <span className="block text-[9px] tracking-[0.3em] text-zinc-500 uppercase -mt-1 font-medium">
-                NIZWA • OMAN
-              </span>
+              <JHLogo size={isScrolled ? 'sm' : 'md'} variant="dark" />
             </button>
           </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CartItem, CheckoutFormData } from '../types';
 import { OMAN_WILAYAT } from '../data/products';
 import { X, CheckCircle, Truck, ShieldCheck, CreditCard, Banknote, MessageCircle } from 'lucide-react';
+import { JHLogo } from './JHLogo';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -78,16 +79,18 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
           <div>
             
             {/* Header */}
-            <div className="border-b border-zinc-200 pb-6 mb-8 text-right">
-              <span className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-400">
-                CHECKOUT • JH STYLE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mt-1">
-                إتمام الطلب والتوصيل
-              </h2>
-              <p className="text-xs text-zinc-500 mt-1">
-                خدمة التوصيل لكافة ولايات ومحافظات سلطنة عُمان خلال 1-3 أيام عمل.
-              </p>
+            <div className="border-b border-zinc-200 pb-6 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-right">
+              <div>
+                <JHLogo size="sm" subtext="CHECKOUT & EXPRESS DELIVERY" />
+              </div>
+              <div>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-black tracking-tight">
+                  إتمام الطلب والتوصيل
+                </h2>
+                <p className="text-xs text-zinc-500 mt-0.5">
+                  توصيل سريع لكافة ولايات ومحافظات سلطنة عُمان خلال 1-3 أيام عمل.
+                </p>
+              </div>
             </div>
 
             <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8">

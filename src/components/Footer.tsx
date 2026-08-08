@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
 import { ActiveTab } from '../types';
+import { JHLogo } from './JHLogo';
 
 interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -18,12 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onFilterCategory }
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div>
-              <span className="font-black text-2xl tracking-[0.2em] uppercase text-white font-serif">
-                JH STYLE
-              </span>
-              <p className="text-[10px] tracking-[0.3em] text-zinc-400 uppercase mt-0.5 font-mono">
-                LUXURY MENSWEAR • NIZWA OMAN
-              </p>
+              <JHLogo variant="light" size="md" subtext="LUXURY MENSWEAR • NIZWA OMAN" />
             </div>
 
             <p className="text-xs text-zinc-400 leading-relaxed font-normal max-w-sm">
